@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "gh-printer",
+  "version": "0.1.0",
+  "description": "Print GitHub Markdown exactly as it appears on GitHub",
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*", "https://gist.github.com/*"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "contextMenus", "webNavigation"],
+  "host_permissions": ["https://viewscreen.githubusercontent.com/*"]
+}

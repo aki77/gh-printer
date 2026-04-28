@@ -1,0 +1,17 @@
+{
+  "name": "gh-printer",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.4.0",
+    "@types/chrome": "^0.0.260",
+    "@types/node": "^25.6.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0"
+  }
+}
