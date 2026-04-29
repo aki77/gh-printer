@@ -4,6 +4,8 @@
 
 A Chrome extension that prints GitHub Markdown pages with correct formatting, preserving diagrams, notebooks, and light-mode styles.
 
+![Demo](https://i.gyazo.com/240311c7948e560cc8cf69ace25a84cf.gif)
+
 ## Features
 
 - Prints GitHub Markdown with proper formatting
