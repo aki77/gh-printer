@@ -13,7 +13,7 @@ async function printPage(): Promise<void> {
   }
 
   normalizeHeadings();
-  injectStyles(content.element);
+  const cleanup = injectStyles(content.element);
 
   if (content.type === "jupyter") {
     await waitForJupyter();
@@ -24,6 +24,7 @@ async function printPage(): Promise<void> {
   // body置き換え後にbackgroundでiframe内の不要要素を削除してもらう
   await chrome.runtime.sendMessage({ type: "removeMermaidControls" });
 
+  window.addEventListener("afterprint", cleanup, { once: true });
   window.print();
 }
 
